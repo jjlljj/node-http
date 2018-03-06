@@ -34,3 +34,11 @@ function getAllMessages(response) {
   response.write(JSON.stringify(messages))
   response.end()
 }
+
+function addMessage(newMessage, response) {
+  messages.push(newMessage)
+
+  response.writeHead(201, {'Content-type': 'text/plain'})
+  response.write('message successfully added')
+  response.end()
+}
