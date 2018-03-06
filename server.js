@@ -36,8 +36,7 @@ function getAllMessages(response) {
 }
 
 function addMessage(newMessage, response) {
-  messages.push(newMessage)
-
+  messages = [...messages, newMessage ]
   response.writeHead(201, {'Content-type': 'text/plain'})
   response.write('message successfully added')
   response.end()
